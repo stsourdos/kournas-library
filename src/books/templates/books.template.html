@@ -1,0 +1,36 @@
+<div layout="row">
+  <md-input-container flex class="md-icon-float md-block">
+      <label>Αναζήτηση</label>
+      <md-icon md-font-icon="fa fa-search"></md-icon>
+      <input id="search-input" ng-model="search"  ng-change="filterCartoList(search)" my-enter="filterCartoList(search)">
+  </md-input-container>
+
+  <md-input-container flex="40">
+    <label>Ταξινόμηση</label>
+    <md-select ng-change="booksCtrl.updateSelect()" name="sort" ng-model="booksCtrl.sort">
+      <md-option value="number" selected>&uarr; Ημερομηνία Καταχώρησης</md-option>
+      <md-option value="-number">&darr; Ημερομηνία Καταχώρησης</md-option>
+      <md-option value="authorSurname">&uarr; Όνομα Συγγραφέα</md-option>
+      <md-option value="-authorSurname">&darr; Όνομα Συγγραφέα</md-option>
+    </md-select>
+  </md-input-container>
+</div>
+
+<div layout="row" class="title-header">
+  <span flex>Τίτλος Βιβλίου</span>
+  <span flex="30">Συγγραφέας</span>
+  <span flex="15">Ημερομηνία Έκδοσης</span>
+  <span flex="15">Αριθμός Σελίδων</span>
+</div>
+<div class="book-row" layout="row" ng-repeat="book in booksCtrl.books | filter : search | orderBy : booksCtrl.sort">
+  <div flex>{{ book.title }}</div>
+  <div flex="30">{{ book.author }}</div>
+  <div flex="15">{{ book.publishAge }}</div>
+  <div flex="15">{{ book.pages }}</div>
+</div>
+
+<footer>
+  <div class="row footer">
+    Τελευταία ενημέρωση: {{ booksCtrl.updatedAt }}
+  </div>
+</footer>
