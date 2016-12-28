@@ -1,6 +1,6 @@
 (function() {
 'use strict';
 
-angular.module('BooksApp', ['ui.router', 'ngMaterial', 'data']);
+angular.module('BooksApp', ['ui.router', 'ngMaterial', 'data', 'common']);
 
 })();

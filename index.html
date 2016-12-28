@@ -13,6 +13,7 @@
   <body ng-app="BooksApp" ng-cloak>
     <h1>Βιβλιοθήκη Κουρνά</h1>
 
+    <loading class=loading-indicator></loading>
     <ui-view></ui-view>
 
     <!-- Libraries -->
@@ -29,6 +30,7 @@
     <!-- Modules -->
     <script src="src/books/books.module.js"></script>
     <script src="src/data/data.module.js"></script>
+    <script src="src/common/common.module.js"></script>
 
     <!-- Routes -->
     <script src="src/routes.js"></script>
@@ -37,5 +39,8 @@
     <script src="src/books/books.controller.js"></script>
     <!-- 'Data' module artifacts -->
     <script src="src/data/data.service.js"></script>
+    <!-- 'Common' module artifacts -->
+    <script src="src/common/loading/loading.component.js"></script>
+    <script src="src/common/loading/loading.interceptor.js"></script>
   </body>
 </html>
