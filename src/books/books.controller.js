@@ -9,7 +9,7 @@ function BooksController(books) {
   var $ctrl = this;
   books = eval(books);
 
-  $ctrl.updatedAt = new Date(books.feed.updated.$t).toString();
+  $ctrl.updatedAt = new Date(books.feed.updated.$t);
 
   $ctrl.books = [];
   // construct a more simple json array of objects for UI representation
